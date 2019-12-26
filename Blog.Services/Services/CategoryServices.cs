@@ -37,6 +37,9 @@ namespace Blog.Services.Services
 
         public CategoryDTO GetCategoryDTO(int Id)
         {
+            if (Id < 0)
+                return null;
+
             Category category = _categoryRepository.GetCategory(Id);
             CategoryDTO categoryDTO = category.GetCategoryDto();
 

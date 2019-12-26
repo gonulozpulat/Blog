@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Blog.Entities.DTO;
+using Blog.Entities.Entities;
+using Blog.Services.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +11,29 @@ namespace Blog.Controllers
 {
     public class ContactController : Controller
     {
-        // GET: Contact
+        private readonly ContactServices _contactServices;
+        public ContactController()
+        {
+            _contactServices = new ContactServices();
+        }
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(Contact contact)
+        {
+            //Model geçersiz ise
+            if (!ModelState.IsValid) 
+            {
+                ModelState.AddModelError("", "Geçersiz Bilgi Girişi");
+                return View(contact);
+            }
+            _contactServices.Add(contact);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

@@ -47,6 +47,7 @@
     <Compile Include="Services\ArticleServices.cs" />
     <Compile Include="Services\CategoryServices.cs" />
     <Compile Include="Services\CommentServices.cs" />
+    <Compile Include="Services\ContactServices.cs" />
     <Compile Include="Services\TagServices.cs" />
   </ItemGroup>
   <ItemGroup>

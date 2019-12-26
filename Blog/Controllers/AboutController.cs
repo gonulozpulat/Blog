@@ -12,7 +12,8 @@ namespace Blog.Controllers
         {
             _aboutServices = new AboutServices();
         }
-        // GET: About
+        [HttpGet]
+        [OutputCache(Duration = 100)]
         public ActionResult Index()
         {
             AboutDTO aboutDTO = _aboutServices.GetAboutDTO();

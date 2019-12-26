@@ -37,6 +37,9 @@ namespace Blog.Services.Services
 
         public ArticleDTO GetArticleDTO(int Id)
         {
+            if (Id < 0)
+                return null;
+
             Article article = _articleRepository.GetArticle(Id);
             ArticleDTO articleDTO = article.GetArticleDTO();
             return articleDTO;
