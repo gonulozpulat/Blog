@@ -15,9 +15,17 @@ namespace Blog.Services.Services
         {
             _commentRepository = new CommentRepository();
         }
+        //Home Index Method
         public List<CommentDTO> GetAllCommentDTO()
         {
             List<Comment> article = _commentRepository.GetAllComment();
+            List<CommentDTO> articleDTO = article.GetAllCommentDTOs();
+            return articleDTO;
+        }
+        //Article Index Method
+        public List<CommentDTO> GetAllCommentDTO(int Id)
+        {
+            List<Comment> article = _commentRepository.GetAllComment(Id);
             List<CommentDTO> articleDTO = article.GetAllCommentDTOs();
             return articleDTO;
         }

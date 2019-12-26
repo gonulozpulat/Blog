@@ -14,7 +14,15 @@ namespace Blog.Dal.Repository
             {
                 comments = database.Comments.Include("Article").ToList();
             }
-
+            return comments;
+        }
+        public List<Comment> GetAllComment(int Id)
+        {
+            List<Comment> comments;
+            using (var database = new ProjectContext())
+            {
+                comments = database.Comments.Include("Article").Where(i => i.ArticleId == Id).ToList();
+            }
             return comments;
         }
     }

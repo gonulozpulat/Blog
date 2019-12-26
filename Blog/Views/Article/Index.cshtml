@@ -25,22 +25,19 @@
                     <div class="pt-5">
                         @if (Model.Comments.Any())
                         {
-                            <h3 class="mb-5">Yorumlar</h3>
+                            <h3 class="mb-5">Yorumlar @Model.Comments.Count</h3>
                             <ul class="comment-list">
                                 @foreach (var item in Model.Comments)
                                 {
-                                    if (item.ArticleId == Model.Article.Id)
-                                    {
-                                        <li class="comment">
-                                            <div class="vcard">
-                                                <img src="images/person_1.jpg" alt="Image placeholder">
-                                            </div>
-                                            <div class="comment-body">
-                                                <h3>@item.Name @item.Surname</h3>
-                                                <p>@item.Message</p>
-                                            </div>
-                                        </li>
-                                    }
+                                    <li class="comment">
+                                        <div class="vcard">
+                                            <img src="https://via.placeholder.com/700x700" alt="Image placeholder">
+                                        </div>
+                                        <div class="comment-body">
+                                            <h3>@item.Name @item.Surname</h3>
+                                            <p>@item.Message</p>
+                                        </div>
+                                    </li>
                                 }
                             </ul>
                         }

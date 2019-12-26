@@ -24,7 +24,7 @@ namespace Blog.Controllers
         public ActionResult Index(int Id)
         {
             ArticleDTO articleDTO = _articleServices.GetArticleDTO(Id);
-            List<CommentDTO> commentDTOs = _commentServices.GetAllCommentDTO();
+            List<CommentDTO> commentDTOs = _commentServices.GetAllCommentDTO(Id);
             var model = new PostDetailViewModel
             {
                 Article = articleDTO,

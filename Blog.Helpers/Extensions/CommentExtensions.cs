@@ -15,7 +15,7 @@ namespace Blog.Helpers.Extensions
                 Surname = comment.Surname,
                 Email = comment.Email,
                 Message = comment.Message,
-                ArticleId = comment.Article.CategoryId,
+                ArticleId = comment.Article.Id,
             }).ToList();
             return commentDTO;
         }
