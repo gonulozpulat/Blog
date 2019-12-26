@@ -1,0 +1,18 @@
+﻿@model AboutDTO
+@if(Model != null){
+    <section class="site-section">
+        <div class="container">
+            <div class="row blog-entries">
+                <div class="col-md-12 col-lg-12 main-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="mb-4">@Model.AboutTitle</h2>
+                            <p class="mb-5"><img src="@Model.AboutImagePathUrl" alt="Image placeholder" class="img-fluid"></p>
+                            <p>@Model.AboutContent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
