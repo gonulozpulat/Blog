@@ -18,7 +18,15 @@ namespace Blog.Dal.Repository
             return articles;
         }
 
-
+        //public List<Article> GetArticleWithTags()
+        //{
+        //    List<Article> articles;
+        //    using(var database =new ProjectContext())
+        //    {
+        //        articles = database.Articles.Include(x => x.Tags).ToList();
+        //    }
+        //    return articles;
+        //}
         public Article GetArticle(int Id)
         {
             Article article;

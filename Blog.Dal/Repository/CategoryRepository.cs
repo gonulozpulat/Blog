@@ -28,7 +28,7 @@ namespace Blog.Dal.Repository
             return category;
         }
 
-
+        //Admin Panel Edit Category
         public bool EditCategory(Category category)
         {
             using(var database = new ProjectContext())
@@ -36,6 +36,17 @@ namespace Blog.Dal.Repository
                 database.Entry(category).State = EntityState.Modified;
                 return database.SaveChanges() > 0;
             }
+        }
+
+        //Admin Panel Add Category
+        public Category AddCategory(Category category)
+        {
+            using(var database= new ProjectContext())
+            {
+                category = database.Categories.Add(category);
+                database.SaveChanges();
+            }
+            return category;
         }
     }
 }

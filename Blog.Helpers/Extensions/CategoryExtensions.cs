@@ -32,5 +32,18 @@ namespace Blog.Helpers.Extensions
             return categoryDto;
         }
 
+        //Admin Panel
+        public static Category GetCategory(this CategoryDTO categoryDto)
+        {
+            var category = new Category
+            {
+                Id = categoryDto.Id,
+                Name = categoryDto.CategoryName,
+                Description = categoryDto.CategoryDescription,
+                ImagePathUrl = categoryDto.CategoryImagePathUrl
+            };
+            return category;
+        }
+
     }
 }

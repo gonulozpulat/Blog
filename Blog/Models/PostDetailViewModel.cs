@@ -1,4 +1,5 @@
 ﻿using Blog.Entities.DTO;
+using Blog.Entities.Entities;
 using System.Collections.Generic;
 
 namespace Blog.Models
@@ -9,8 +10,11 @@ namespace Blog.Models
         {
             Article = new ArticleDTO();
             Comments = new List<CommentDTO>();
+            Comment = new Comment();
         }
         public List<CommentDTO> Comments { get; set; }
         public ArticleDTO Article { get; set; }
+
+        public Comment Comment { get; set; }
     }
 }

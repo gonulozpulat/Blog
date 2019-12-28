@@ -19,5 +19,19 @@ namespace Blog.Helpers.Extensions
             }).ToList();
             return commentDTO;
         }
+
+        //Article Detail Add Comment Extensions
+        //public static CommentDTO GetCommentDTO(this Comment comment)
+        //{
+        //    var commentDTO = new CommentDTO
+        //    {
+        //        Name = comment.Name,
+        //        Surname = comment.Surname,
+        //        Email = comment.Email,
+        //        Message = comment.Message,
+        //        ArticleId = comment.Article.Id
+        //    };
+        //    return commentDTO;
+        //}
     }
 }

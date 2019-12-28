@@ -1,4 +1,5 @@
 ﻿using Blog.Entities.DTO;
+using Blog.Entities.Entities;
 using Blog.Models;
 using Blog.Services.Services;
 using System.Collections.Generic;
@@ -23,15 +24,16 @@ namespace Blog.Controllers
         {
             List<ArticleDTO> articleDTOs = _articleServices.GetTopArticleDTO();
             List<CategoryDTO> categoryTopDTOs = _categoryServices.GetTopCategoryDTO();
-            List<CommentDTO> commentDTOs = _commentServices.GetAllCommentDTO();
+            //List<CommentDTO> commentDTOs = _commentServices.GetAllCommentDTO();
             var articleCategory = new HomeIndexViewModel
             {
                 Article = articleDTOs,
                 Category = categoryTopDTOs,
-                Comment = commentDTOs
+                //Comment = commentDTOs
 
             };
             return View(articleCategory);
         }
+        
     }
 }

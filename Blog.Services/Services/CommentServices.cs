@@ -29,5 +29,8 @@ namespace Blog.Services.Services
             List<CommentDTO> articleDTO = article.GetAllCommentDTOs();
             return articleDTO;
         }
+
+        public Comment AddComment(Comment comment) => _commentRepository.AddComment(comment);
+
     }
 }

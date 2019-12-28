@@ -19,5 +19,18 @@ namespace Blog.Helpers.Extensions
 
             return userDTO;
         }
+
+        public static UserDTO GetUserDTO(this User user)
+        {
+            var userDTO = new UserDTO
+            {
+                Name = user.Name,
+                Surname = user.Surname,
+                Email = user.Email,
+                Password = user.Password
+            };
+
+            return userDTO;
+        }
     }
 }

@@ -9,10 +9,10 @@ namespace Blog.Models
         {
             Article = new List<ArticleDTO>();
             Category = new List<CategoryDTO>();
-            Comment = new List<CommentDTO>();
+            //Comment = new List<CommentDTO>();
         }
         public List<ArticleDTO> Article { get; set; }
         public List<CategoryDTO> Category { get; set; }
-        public List<CommentDTO> Comment { get; set; }
+        //public List<CommentDTO> Comment { get; set; }
     }
 }

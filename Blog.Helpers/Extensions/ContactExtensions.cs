@@ -20,17 +20,6 @@ namespace Blog.Helpers.Extensions
             return contactDTO;
         }
 
-        public static ContactDTO GetContactDTO(this Contact contacts)
-        {
-            var contactDTO = new ContactDTO
-            {
-                Name = contacts.Name,
-                Surname = contacts.Surname,
-                Email = contacts.Email,
-                Message = contacts.Message
-            };
-
-            return contactDTO;
-        }
+        
     }
 }

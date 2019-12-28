@@ -11,7 +11,8 @@ namespace Blog.Helpers.Extensions
         {
             var tagDTO = tags.Select(tag => new TagDTO
             {
-                TagName = tag.Name
+                TagName = tag.Name,
+                ArticleList = tag.Articles.ToList()
             }).ToList();
             return tagDTO;
         }

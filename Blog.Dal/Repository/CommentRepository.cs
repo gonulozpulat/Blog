@@ -25,5 +25,15 @@ namespace Blog.Dal.Repository
             }
             return comments;
         }
+
+        public Comment AddComment(Comment comment)
+        {
+            using(var database = new ProjectContext())
+            {
+                comment = database.Comments.Add(comment);
+                database.SaveChanges();
+            }
+            return comment;
+        }
     }
 }

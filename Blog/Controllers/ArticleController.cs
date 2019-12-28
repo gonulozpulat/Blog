@@ -1,4 +1,5 @@
 ﻿using Blog.Entities.DTO;
+using Blog.Entities.Entities;
 using Blog.Models;
 using Blog.Services.Services;
 using System;
@@ -24,6 +25,7 @@ namespace Blog.Controllers
         public ActionResult Index(int Id)
         {
             ArticleDTO articleDTO = _articleServices.GetArticleDTO(Id);
+            //CommentDTO commentDTO = _articleServices.Get(Id);
             List<CommentDTO> commentDTOs = _commentServices.GetAllCommentDTO(Id);
             var model = new PostDetailViewModel
             {
@@ -32,5 +34,21 @@ namespace Blog.Controllers
             };
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(Comment comment)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Geçersiz Bilgi Girişi");
+                return View(comment);
+            }
+
+            _commentServices.AddComment(comment);
+            return RedirectToAction(nameof(Index));
+        }
+        
+
     }
 }

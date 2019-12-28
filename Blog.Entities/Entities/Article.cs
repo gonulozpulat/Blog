@@ -18,6 +18,6 @@ namespace Blog.Entities.Entities
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<Tag> Tags { get; set; }
+        public ICollection<Tag> Tags { get; set; }
     }
 }
