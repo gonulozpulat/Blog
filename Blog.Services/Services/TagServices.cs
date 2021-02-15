@@ -15,7 +15,7 @@ namespace Blog.Services.Services
             _tagRepository = new TagRepository();
         }
 
-        public List<TagDTO> tagDTO()
+        public List<TagDTO> GetAllTagDTO()
         {
             List<Tag> tags = _tagRepository.GetAllTag();
             List<TagDTO> tagDTOs = tags.GetTagDTO();

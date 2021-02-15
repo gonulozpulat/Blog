@@ -10,11 +10,12 @@ namespace Blog.Dal.Repository
         public List<Tag> GetAllTag()
         {
             List<Tag> tags;
-            using(var database = new ProjectContext())
+            using (var database = new ProjectContext())
             {
-                tags = database.Tags.ToList();
+                tags = database.Tags.Include("Article").ToList();
             }
             return tags;
         }
+
     }
 }

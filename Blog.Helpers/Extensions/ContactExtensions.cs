@@ -7,7 +7,7 @@ namespace Blog.Helpers.Extensions
 {
     public static class ContactExtensions
     {
-        public static List<ContactDTO> GetContactDTO(this IEnumerable<Contact> contacts)
+        public static List<ContactDTO> GetAllContactDTO(this IEnumerable<Contact> contacts)
         {
             var contactDTO = contacts.Select(contact => new ContactDTO
             {
@@ -19,5 +19,7 @@ namespace Blog.Helpers.Extensions
 
             return contactDTO;
         }
+
+        
     }
 }

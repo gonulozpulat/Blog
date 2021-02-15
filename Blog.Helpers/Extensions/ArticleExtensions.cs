@@ -18,8 +18,9 @@ namespace Blog.Helpers.Extensions
                 ArticleImagePathUrl = article.ImagePathUrl,
                 CreatedDate = article.CreatedDate,
                 CategoryName = article.Category.Name,
-                CategoryId = article.CategoryId
-                
+                CategoryId = article.CategoryId,
+                TagList = article.Tags.ToList()
+
             }).ToList();
 
             return articleDTO;
@@ -35,11 +36,10 @@ namespace Blog.Helpers.Extensions
                 ArticleImagePathUrl = article.ImagePathUrl,
                 CreatedDate = article.CreatedDate,
                 CategoryName = article.Category.Name,
-                CategoryId = article.Category.Id
+                CategoryId = article.Category.Id,
+                TagList = article.Tags.ToList()
             };
             return articleDTO;
         }
-
-
     }
 }

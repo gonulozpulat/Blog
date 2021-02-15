@@ -15,9 +15,23 @@ namespace Blog.Helpers.Extensions
                 Surname = comment.Surname,
                 Email = comment.Email,
                 Message = comment.Message,
-                ArticleId = comment.Article.CategoryId,
+                ArticleId = comment.Article.Id,
             }).ToList();
             return commentDTO;
         }
+
+        //Article Detail Add Comment Extensions
+        //public static CommentDTO GetCommentDTO(this Comment comment)
+        //{
+        //    var commentDTO = new CommentDTO
+        //    {
+        //        Name = comment.Name,
+        //        Surname = comment.Surname,
+        //        Email = comment.Email,
+        //        Message = comment.Message,
+        //        ArticleId = comment.Article.Id
+        //    };
+        //    return commentDTO;
+        //}
     }
 }

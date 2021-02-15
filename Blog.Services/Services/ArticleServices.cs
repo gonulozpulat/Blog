@@ -26,7 +26,7 @@ namespace Blog.Services.Services
             List<Article> article = _articleRepository.GetAllArticles();
             List<ArticleDTO> articleDTO = article.GetAllArticleDTO();
             return articleDTO;
-        }
+        }       
 
         public List<ArticleDTO> GetTopArticleDTO()
         {
@@ -37,6 +37,9 @@ namespace Blog.Services.Services
 
         public ArticleDTO GetArticleDTO(int Id)
         {
+            if (Id < 0)
+                return null;
+
             Article article = _articleRepository.GetArticle(Id);
             ArticleDTO articleDTO = article.GetArticleDTO();
             return articleDTO;
